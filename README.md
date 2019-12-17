@@ -5,8 +5,8 @@
 [![][release img]][release]
 [![][license img]][license]
 
-[maven]:http://search.maven.org/#search|gav|1|g:"com.github.microtweak"%20AND%20a:"jaxrs-ext"
-[maven img]:https://maven-badges.herokuapp.com/maven-central/com.github.microtweak/jaxrs-ext/badge.svg
+[maven]:http://search.maven.org/#search|gav|1|g:"com.github.microtweak"%20AND%20a:"jaxrs-ext-parent"
+[maven img]:https://maven-badges.herokuapp.com/maven-central/com.github.microtweak/jaxrs-ext-parent/badge.svg
 
 [javadoc]:https://javadoc.io/doc/com.github.microtweak/jaxrs-ext
 [javadoc img]:https://javadoc.io/badge/com.github.microtweak/jaxrs-ext.svg
