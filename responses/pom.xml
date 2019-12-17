@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.github.microtweak</groupId>
         <artifactId>jaxrs-ext-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
     <artifactId>jaxrs-ext-responses</artifactId>
