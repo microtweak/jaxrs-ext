@@ -32,11 +32,11 @@ public final class CommonResponses {
         return status(Status.OK);
     }
 
-    public static Response notContent() {
+    public static Response noContent() {
         return status(Status.NO_CONTENT);
     }
 
-    public static Response notContent(Object entity) {
+    public static Response noContent(Object entity) {
         return status(Status.NO_CONTENT, entity);
     }
 
