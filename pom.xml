@@ -16,6 +16,7 @@
 
     <modules>
         <module>beanvalidation</module>
+        <module>responses</module>
     </modules>
 
     <name>JAX-RS Extensions</name>
