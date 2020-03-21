@@ -11,8 +11,8 @@ import java.util.Objects;
 public interface RestParamConverter<T> {
 
     default boolean canConvert(Class<T> rawType, Type genericType, List<Annotation> annotations) {
-        TypeVariable<?> typeVar = RestParamConverter.class.getTypeParameters()[1];
-        return TypeUtils.getRawType(typeVar, rawType).isAssignableFrom( getClass() );
+        TypeVariable<?> typeVar = RestParamConverter.class.getTypeParameters()[0];
+        return TypeUtils.getRawType(typeVar, getClass()).isAssignableFrom( rawType );
     }
 
     T fromString(String value, Class<T> rawType, Type genericType, List<Annotation> annotations);
