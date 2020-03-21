@@ -33,6 +33,7 @@
         <jaxrs.version>2.1.1</jaxrs.version>
         <bean-validation.version>2.0.1.Final</bean-validation.version>
         <cdi.version>2.0</cdi.version>
+        <spring.version>5.2.4.RELEASE</spring.version>
     </properties>
 
     <dependencyManagement>
@@ -68,6 +69,13 @@
                 <groupId>javax.enterprise</groupId>
                 <artifactId>cdi-api</artifactId>
                 <version>${cdi.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>
