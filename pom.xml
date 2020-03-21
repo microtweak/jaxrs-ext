@@ -32,6 +32,7 @@
     <properties>
         <jaxrs.version>2.1.1</jaxrs.version>
         <bean-validation.version>2.0.1.Final</bean-validation.version>
+        <cdi.version>2.0</cdi.version>
     </properties>
 
     <dependencyManagement>
@@ -60,6 +61,13 @@
                 <groupId>javax.validation</groupId>
                 <artifactId>validation-api</artifactId>
                 <version>${bean-validation.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.enterprise</groupId>
+                <artifactId>cdi-api</artifactId>
+                <version>${cdi.version}</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>
