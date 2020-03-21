@@ -9,7 +9,7 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-public class CdiAwareParamConverterProvider extends AbstractParamConverterProvider {
+public class CdiParamConverterProvider extends AbstractParamConverterProvider {
 
     @Inject
     private Instance<RestParamConverter> converters;
