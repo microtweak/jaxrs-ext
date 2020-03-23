@@ -34,9 +34,29 @@
         </dependency>
 
         <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>eu.somatik.serviceloader-maven-plugin</groupId>
+                <artifactId>serviceloader-maven-plugin</artifactId>
+                <configuration>
+                    <services>
+                        <param>com.github.microtweak.jaxrs.ext.param.RestParamConverter</param>
+                        <param>com.github.microtweak.jaxrs.ext.param.spi.ConverterLookup</param>
+                    </services>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
