@@ -1,7 +1,6 @@
 package com.github.microtweak.jaxrs.ext.param;
 
 import com.github.microtweak.jaxrs.ext.param.spi.ConverterLookup;
-import lombok.extern.java.Log;
 
 import javax.ws.rs.ext.ParamConverter;
 import javax.ws.rs.ext.ParamConverterProvider;
@@ -15,7 +14,6 @@ import java.util.stream.StreamSupport;
 
 import static java.util.stream.Collectors.toList;
 
-@Log
 public class RestParamConverterProvider implements ParamConverterProvider {
 
     private List<RestParamConverter> converters;
