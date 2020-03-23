@@ -57,7 +57,7 @@
                 <configuration>
                     <services>
                         <param>com.github.microtweak.jaxrs.ext.param.RestParamConverter</param>
-                        <param>com.github.microtweak.jaxrs.ext.param.spi.ConverterLookup</param>
+                        <param>com.github.microtweak.jaxrs.ext.param.ConverterLookup</param>
                     </services>
                 </configuration>
             </plugin>

@@ -1,5 +1,6 @@
-package com.github.microtweak.jaxrs.ext.param.spi;
+package com.github.microtweak.jaxrs.ext.param.impl;
 
+import com.github.microtweak.jaxrs.ext.param.ConverterLookup;
 import com.github.microtweak.jaxrs.ext.param.RestParamConverter;
 
 import java.util.ArrayList;

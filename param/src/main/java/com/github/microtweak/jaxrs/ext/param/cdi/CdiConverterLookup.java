@@ -1,6 +1,6 @@
 package com.github.microtweak.jaxrs.ext.param.cdi;
 
-import com.github.microtweak.jaxrs.ext.param.spi.ConverterLookup;
+import com.github.microtweak.jaxrs.ext.param.ConverterLookup;
 import com.github.microtweak.jaxrs.ext.param.RestParamConverter;
 import lombok.extern.java.Log;
 

@@ -1,4 +1,4 @@
-package com.github.microtweak.jaxrs.ext.param.spi;
+package com.github.microtweak.jaxrs.ext.param;
 
 import com.github.microtweak.jaxrs.ext.param.RestParamConverter;
 

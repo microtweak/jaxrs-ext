@@ -1,7 +1,5 @@
 package com.github.microtweak.jaxrs.ext.param;
 
-import com.github.microtweak.jaxrs.ext.param.spi.ConverterLookup;
-
 import javax.ws.rs.ext.ParamConverter;
 import javax.ws.rs.ext.ParamConverterProvider;
 import java.lang.annotation.Annotation;
