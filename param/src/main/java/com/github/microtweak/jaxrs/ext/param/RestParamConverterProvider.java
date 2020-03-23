@@ -18,20 +18,24 @@ public class RestParamConverterProvider implements ParamConverterProvider {
 
     private List<RestParamConverter> converters;
 
-    public RestParamConverterProvider() {
-        final Spliterator<ConverterLookup> iterator = ServiceLoader.load(ConverterLookup.class).spliterator();
+    public List<RestParamConverter> getConverters() {
+        if (converters == null) {
+            final Spliterator<ConverterLookup> iterator = ServiceLoader.load(ConverterLookup.class).spliterator();
 
-        converters = StreamSupport.stream(iterator, false)
-                .filter(ConverterLookup::isAvailable)
-                .flatMap(cl -> cl.lookup().stream())
-                .collect(toList());
+            converters = StreamSupport.stream(iterator, false)
+                    .filter(ConverterLookup::isAvailable)
+                    .flatMap(cl -> cl.lookup().stream())
+                    .collect(toList());
+        }
+
+        return converters;
     }
 
     @Override
     public <T> ParamConverter<T> getConverter(Class<T> rawType, Type genericType, Annotation[] annotations) {
         final List<Annotation> annotationList = Arrays.asList( annotations );
 
-        return converters.stream()
+        return getConverters().stream()
                 .filter(c -> c.canConvert(rawType, genericType, annotationList))
                 .findFirst()
                 .map(c -> toJaxRsConverter(c, rawType, genericType, annotationList))

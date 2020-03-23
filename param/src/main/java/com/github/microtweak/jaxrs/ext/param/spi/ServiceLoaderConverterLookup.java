@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ServiceLoader;
 
-public class DefaultConverterLookup implements ConverterLookup {
+public class ServiceLoaderConverterLookup implements ConverterLookup {
 
     @Override
     public boolean isAvailable() {
