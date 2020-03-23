@@ -16,11 +16,11 @@ import java.util.stream.StreamSupport;
 import static java.util.stream.Collectors.toList;
 
 @Log
-public class DefaultParamConverterProvider implements ParamConverterProvider {
+public class RestParamConverterProvider implements ParamConverterProvider {
 
     private List<RestParamConverter> converters;
 
-    public DefaultParamConverterProvider() {
+    public RestParamConverterProvider() {
         final Spliterator<ConverterLookup> iterator = ServiceLoader.load(ConverterLookup.class).spliterator();
 
         converters = StreamSupport.stream(iterator, false)

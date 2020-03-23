@@ -17,7 +17,7 @@ public class JaxRsParamFeature implements Feature {
             return false;
         }
 
-        context.register(DefaultParamConverterProvider.class);
+        context.register(RestParamConverterProvider.class);
         return true;
     }
 

@@ -13,7 +13,7 @@ public class JerseyParamFeature implements ForcedAutoDiscoverable {
 
     @Override
     public void configure(FeatureContext context) {
-        context.register(DefaultParamConverterProvider.class);
+        context.register(RestParamConverterProvider.class);
     }
 
 }
