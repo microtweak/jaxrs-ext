@@ -4,12 +4,13 @@ import javax.ws.rs.ext.ParamConverter;
 import javax.ws.rs.ext.ParamConverterProvider;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
-import java.util.Arrays;
 import java.util.List;
 import java.util.ServiceLoader;
 import java.util.Spliterator;
 import java.util.stream.StreamSupport;
 
+import static java.lang.String.format;
+import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
 
 public class RestParamConverterProvider implements ParamConverterProvider {
@@ -31,7 +32,7 @@ public class RestParamConverterProvider implements ParamConverterProvider {
 
     @Override
     public <T> ParamConverter<T> getConverter(Class<T> rawType, Type genericType, Annotation[] annotations) {
-        final List<Annotation> annotationList = Arrays.asList( annotations );
+        final List<Annotation> annotationList = asList( annotations );
 
         return getConverters().stream()
                 .filter(c -> c.canConvert(rawType, genericType, annotationList))
@@ -44,7 +45,14 @@ public class RestParamConverterProvider implements ParamConverterProvider {
         return new ParamConverter<T>() {
             @Override
             public T fromString(String value) {
-                return converter.fromString(value, rawType, genericType, annotations);
+                try {
+                    return converter.fromString(value, rawType, genericType, annotations);
+                } catch (ParamConvertException e) {
+                    throw e;
+                } catch (Exception e) {
+                    final String msg = format("Failed to convert \"%s\" to %s!", value, rawType.getName());
+                    throw new ParamConvertException(msg, e);
+                }
             }
 
             @Override
