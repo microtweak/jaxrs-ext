@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>jaxrs-ext-param</artifactId>
-    <name>JAX-RS Extension - Parameter extensions</name>
+    <name>JAX-RS Extension - Parameter Converters extensions</name>
 
     <dependencies>
         <dependency>
