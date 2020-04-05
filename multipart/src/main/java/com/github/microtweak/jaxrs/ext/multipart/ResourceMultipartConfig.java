@@ -5,6 +5,23 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Alternative annotation to {@link javax.servlet.annotation.MultipartConfig} allowing configuration in the Resource method or class.
+ *
+ * <br><br>
+ *
+ * The annotation {@link javax.servlet.annotation.MultipartConfig} can also be accepted. However, this annotation must be
+ * placed only in the Resource class or in the class that inherits from {@link javax.ws.rs.core.Application}
+ *
+ * <br><br>
+ *
+ * The order to read the Multipart configuration is:
+ * <ol>
+ * <li>Resource Method</li>
+ * <li>Resource Class</li>
+ * <li>Class inheriting from Application</li>
+ * </ol>
+ */
 @Target({ ElementType.TYPE, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ResourceMultipartConfig {
